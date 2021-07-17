@@ -6,11 +6,12 @@ import WorkHistory from "./components/Workhistory";
  class App extends Component {
  
   render() {
-  return <div> Hello world and other things! 
-    <General />
-    <Education />
-    <WorkHistory />
-  </div>
+  return <div className="wrapper">
+      
+      <General />
+      <Education />
+      <WorkHistory />
+      </div>
   }
 }
 

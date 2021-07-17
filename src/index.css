@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(37, 129, 160);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.general {
+background-color: grey;
+display: flex;
+flex-direction: column;
+height: 300px;
+width: 400px;
+}
+
+.work-history {
+  background-color: rgb(114, 6, 6);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 400px;
+  }
+
+.education {
+    background-color: rgb(43, 6, 175);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+    }
+
+.wrapper {
+align-items: center;
+display: flex;
+left: 0;
+flex-direction: column;
+top: 0;
+}
+
+.generalContent {
+display: flex;
+align-items: center;
+flex-direction: column;
+
 }
