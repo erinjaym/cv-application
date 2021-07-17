@@ -5,8 +5,11 @@ const WorkHistory = (props) => {
 
     return (
         <div id="WorkHistorySection" className="work-history">
+            <div id="left-arrow" class="arrow-left"></div>
+
+            <div id="workHistoryMain" className="main">
             <h1><center>Work History</center></h1>
-            <form id="generalInfo"> 
+            <form id="workHistoryForm" action=""> 
                 <div id="jobName" className="formContent">
                     <label for="name">Employer Name</label>
                     <input type="text" id="name" placeholder="Bobs Used Cars" maxlength="15"></input>
@@ -35,6 +38,9 @@ const WorkHistory = (props) => {
                     <button id="clearWorkHistory" className="delete-button">Clear</button>
                 </div>
             </form>
+            </div>
+
+            <div id="right-arrow" class="arrow-right"></div>
         </div>
     );
 }

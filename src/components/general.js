@@ -7,9 +7,9 @@ const General = (props) => {
         <div id="generalSection" className="general">
             <div id="left-arrow" class="arrow-left"></div>
             
-            <div id="personal-main" className="general-main">
+            <div id="personal-main" className="main">
             <h1><center>Personal Information</center></h1>
-            <form id="generalInfo"> 
+            <form id="generalInfoForm"> 
                 <div id="nameSectionFirst" className="formContent">
                     <label for="firstName">First name</label>
                     <input type="text" id="firstName" placeholder="Billy" maxlength="15"></input>

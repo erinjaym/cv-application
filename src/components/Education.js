@@ -6,8 +6,11 @@ const Education = (props) => {
     return (
 
         <div id="educationSection" className="education">
+            <div id="left-arrow" class="arrow-left"></div>
+
+            <div id="education-main" className="main">
             <h1><center>Education</center></h1>
-            <form id="generalInfo"> 
+            <form id="educationlInfoForm"> 
                 <div id="nameSection" className="formContent">
                     <label for="name">School Name</label>
                     <input type="text" id="name" placeholder="Metropolitan State University of Denver" maxlength="50"></input>
@@ -33,6 +36,9 @@ const Education = (props) => {
                     <button id="clearEducation" className="delete-button" type="">Clear</button>
                 </div>
             </form>
+            </div>
+
+            <div id="right-arrow" class="arrow-right"></div>
         </div>
     );
 }
