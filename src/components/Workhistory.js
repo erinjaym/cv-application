@@ -8,27 +8,30 @@ const WorkHistory = (props) => {
             <h1><center>Work History</center></h1>
             <form id="generalInfo"> 
                 <div id="jobName" className="formContent">
-                    <label for="name">School Name</label>
-                    <input type="text" id="name" placeholder="insert name" maxlength="15"></input>
+                    <label for="name">Employer Name</label>
+                    <input type="text" id="name" placeholder="Bobs Used Cars" maxlength="15"></input>
                 </div>
 
                 <div id="datesSection" className="formContent">
-                    <label for="gradDate">Date of Graduation</label>
-                    <input type="date" id="gradDate"></input>
-                </div>
-
-                <div id="majorSection" className="formContent">
-                    <label for="major">Major</label>
-                    <input type="text" id="major" placeholder="Computer Science" maxlength="30"></input>
-                </div>
-            
-                <div id="minorSection" className="formContent">
-                    <label for="minor">Minor</label>
-                    <input type="text" id="minor" placeholder="Japanese" maxlength="30"></input>
+                Dates of Employment
+                    <label for="startDate" >From</label>
+                    <input type="date" className="employment-dates" id="startDate"></input>
+                    <label for="endDate">To</label>
+                    <input type="date" className="employment-dates" id="endDate"></input>
                 </div><br></br>
 
-                <div id="save" className="formContent">
-                    <button className="save-button" type="submit">Save</button> 
+                <div id="titleSection" className="formContent">
+                    <label for="jobTitle">Title</label>
+                    <input type="text" id="jobTitle" placeholder="Commander" maxlength="30"></input>
+                </div>
+            
+                <div id="jobDescriptionSection" className="formContent">
+                    <label for="jobDescription">Job Responsibilities</label>
+                    <textarea id="jobDescription" placeholder="Doing all the things" rows="6" columns="20"></textarea>
+                </div><br></br><br></br>
+
+                <div id="add" className="formContent">
+                    <button className="save-button" type="submit">Add</button> 
                     <button id="clearWorkHistory" className="delete-button">Clear</button>
                 </div>
             </form>

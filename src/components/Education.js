@@ -10,7 +10,7 @@ const Education = (props) => {
             <form id="generalInfo"> 
                 <div id="nameSection" className="formContent">
                     <label for="name">School Name</label>
-                    <input type="text" id="name" placeholder="insert name" maxlength="15"></input>
+                    <input type="text" id="name" placeholder="Metropolitan State University of Denver" maxlength="50"></input>
                 </div>
 
                 <div id="datesSection" className="formContent">

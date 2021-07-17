@@ -15,27 +15,44 @@ code {
 }
 
 .general {
-background-color: grey;
+background-color: rgba(128, 128, 128, 0.555);
+border-radius: 1%;
 display: flex;
-flex-direction: column;
+flex-direction: row;
+justify-content: center;
+align-items: center;
 height: 100%;
-width: 80vw;
+padding-bottom: 15px;
+width: 60vw;
 }
 
+
+.general-main {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: column;
+  width: 50vw;
+  }
+
 .work-history {
-  background-color: rgb(114, 6, 6);
+  background-color: rgba(128, 128, 128, 0.555);
+  border-radius: 1%;
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 80vw;
+  padding-bottom: 15px;
+  width: 60vw;
   }
 
 .education {
-    background-color: rgb(43, 6, 175);
+    background-color: rgba(128, 128, 128, 0.555);
+    border-radius: 1%;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 80vw;
+    padding-bottom: 15px;
+    width: 60vw;
     }
 
 .wrapper {
@@ -50,6 +67,7 @@ display: flex;
 align-items: center;
 flex-direction: column;
 }
+
 
 
 input[type=text] {
@@ -71,6 +89,22 @@ input[type=date] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+
+input[type=date].employment-dates  {
+  width: 20%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid blue;
 }
 
 .save-button
@@ -95,4 +129,20 @@ input[type=date] {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.arrow-right {
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid rgb(77, 85, 77);
+  border-top: 80px solid transparent;
+  height: 0;
+  width: 0;
+}
+
+.arrow-left {
+  border-bottom: 80px solid transparent;
+  border-right: 80px solid rgb(77, 85, 77);
+  border-top: 80px solid transparent;
+  height: 0px;
+  width: 0px;
 }
