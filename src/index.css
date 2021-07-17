@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-size: large;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,37 +18,81 @@ code {
 background-color: grey;
 display: flex;
 flex-direction: column;
-height: 300px;
-width: 400px;
+height: 100%;
+width: 80vw;
 }
 
 .work-history {
   background-color: rgb(114, 6, 6);
   display: flex;
   flex-direction: column;
-  height: 300px;
-  width: 400px;
+  height: 100%;
+  width: 80vw;
   }
 
 .education {
     background-color: rgb(43, 6, 175);
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 400px;
+    height: 100%;
+    width: 80vw;
     }
 
 .wrapper {
 align-items: center;
 display: flex;
-left: 0;
 flex-direction: column;
 top: 0;
 }
 
-.generalContent {
+.formContent {
 display: flex;
 align-items: center;
 flex-direction: column;
+}
 
+
+input[type=text] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=email] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.save-button
+{
+    background-color: #4c63af;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.delete-button
+{
+    background-color: #860707;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
