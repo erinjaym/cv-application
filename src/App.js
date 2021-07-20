@@ -4,7 +4,7 @@ import Workhistory from "./components/Workhistory";
 import Education from "./components/Education";
 import LeftArrow from "./components/LeftArrow";
 import RightArrow from "./components/RightArrow";
-import CvResult from "./components/CvResult";
+import CvResults from "./components/CvResults";
 
  class App extends Component {
    constructor(props){
@@ -70,7 +70,7 @@ import CvResult from "./components/CvResult";
 displayCv (){
   this.setState (prevState => {
     return { 
-      section: <CvResult />, 
+      section: <CvResults />, 
       id: 3
     }
   })
@@ -83,7 +83,7 @@ this.setState (prevState => {
     id: 0
   }
 })
-}
+} 
 
 
 
