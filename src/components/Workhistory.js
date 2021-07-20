@@ -1,12 +1,11 @@
 import React from 'react';
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 
 const WorkHistory = (props) => {
     const { WorkHistory } = props
 
     return (
-        <div id="WorkHistorySection" className="work-history">
-            <div id="left-arrow" class="arrow-left"></div>
-
             <div id="workHistoryMain" className="main">
             <h1><center>Work History</center></h1>
             <form id="workHistoryForm" action=""> 
@@ -39,9 +38,6 @@ const WorkHistory = (props) => {
                 </div>
             </form>
             </div>
-
-            <div id="right-arrow" class="arrow-right"></div>
-        </div>
     );
 }
 

@@ -1,13 +1,11 @@
 import React from 'react';
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 
 const Education = (props) => {
     const { Education } = props
 
     return (
-
-        <div id="educationSection" className="education">
-            <div id="left-arrow" class="arrow-left"></div>
-
             <div id="education-main" className="main">
             <h1><center>Education</center></h1>
             <form id="educationlInfoForm"> 
@@ -37,9 +35,6 @@ const Education = (props) => {
                 </div>
             </form>
             </div>
-
-            <div id="right-arrow" class="arrow-right"></div>
-        </div>
     );
 }
 

@@ -1,15 +1,15 @@
 import React from 'react';
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 
-const General = (props) => {
-    const { General } = props
+class General extends React.Component{
+    render(){
 
     return (
-        <div id="generalSection" className="general">
-            <div id="left-arrow" class="arrow-left"></div>
             
-            <div id="personal-main" className="main">
+            <div id="general" className="main">
             <h1><center>Personal Information</center></h1>
-            <form id="generalInfoForm"> 
+            <form id="generalInfo"> 
                 <div id="nameSectionFirst" className="formContent">
                     <label for="firstName">First name</label>
                     <input type="text" id="firstName" placeholder="Billy" maxlength="15"></input>
@@ -42,18 +42,16 @@ const General = (props) => {
 
                 <div id="save" className="formContent">
                     <button className="save-button" type="submit">Save</button> 
-                    <button id="clearGeneral" className="delete-button">Clear</button>
+                    <button  id="clearGeneral" className="delete-button">Clear</button>
                 </div>
 
                 
             </form>
             </div>
 
-            <div id="right-arrow" class="arrow-right"></div>
-
-        </div>
     );
 }
+} // render
 
 
 export default General;
