@@ -167,3 +167,11 @@ textarea {
   height: 0px;
   width: 0px;
 }
+
+.cv-display{
+  background-color: rgba(247, 247, 247);
+  border: solid 1px black;
+  border-radius: 0%;
+  width: 60vw;
+  height: 95vh;
+}

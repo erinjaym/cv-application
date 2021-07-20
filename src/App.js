@@ -4,6 +4,7 @@ import Workhistory from "./components/Workhistory";
 import Education from "./components/Education";
 import LeftArrow from "./components/LeftArrow";
 import RightArrow from "./components/RightArrow";
+import CvResult from "./components/CvResult";
 
  class App extends Component {
    constructor(props){
@@ -17,6 +18,8 @@ import RightArrow from "./components/RightArrow";
    //this.workChange = this.workChange.bind(this); (may add buttons to specific section later. Will omit if not. 
    this.goRight = this.goRight.bind(this);
    this.goLeft = this.goLeft.bind(this);
+   this.displayCv = this.displayCv.bind(this);
+   this.backToBuild = this.backToBuild.bind(this);
    }
 
    goRight () {
@@ -64,6 +67,24 @@ import RightArrow from "./components/RightArrow";
     })
   }
 
+displayCv (){
+  this.setState (prevState => {
+    return { 
+      section: <CvResult />, 
+      id: 3
+    }
+  })
+}
+
+backToBuild (){
+this.setState (prevState => {
+  return {
+    section: <General />,
+    id: 0
+  }
+})
+}
+
 
 
 workChange () {
@@ -98,6 +119,8 @@ this.setState ({
         {this.state.section}
         <div><RightArrow goRight={this.goRight.bind(this)}/></div>
       </div>
+      <button id="check-cv" onClick={this.displayCv}>Check CV</button>
+      <button id="back-to-build" onClick={this.backToBuild}>Back to Build </button>
   </div>
   }
 }
