@@ -1,6 +1,4 @@
 import React from 'react';
-import LeftArrow from "./LeftArrow";
-import RightArrow from "./RightArrow";
 
 const Education = (props) => {
     const { Education } = props

@@ -14,18 +14,6 @@ code {
     monospace;
 }
 
-.general {
-  align-items: center;
-background-color: rgba(128, 128, 128, 0.555);
-border-radius: 1%;
-display: flex;
-flex-direction: row;
-height: 100%;
-justify-content: center;
-padding-bottom: 15px;
-width: 60vw;
-}
-
 
 .main {
   display: flex;
@@ -34,6 +22,19 @@ width: 60vw;
   padding-right: 10px;
   width: 50vw;
   }
+
+  .general {
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.555);
+  border-radius: 1%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: 15px;
+  width: 60vw;
+  }
+  
 
 .work-history {
   align-items: center;
@@ -143,9 +144,25 @@ textarea {
   width: 0;
 }
 
+.arrow-right:hover {
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid rgb(155, 74, 9);
+  border-top: 80px solid transparent;
+  height: 0;
+  width: 0;
+}
+
 .arrow-left {
   border-bottom: 80px solid transparent;
   border-right: 80px solid rgb(77, 85, 77);
+  border-top: 80px solid transparent;
+  height: 0px;
+  width: 0px;
+}
+
+.arrow-left:hover {
+  border-bottom: 80px solid transparent;
+  border-right: 80px solid rgb(155, 74, 9);
   border-top: 80px solid transparent;
   height: 0px;
   width: 0px;

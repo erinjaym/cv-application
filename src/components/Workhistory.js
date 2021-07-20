@@ -1,6 +1,4 @@
 import React from 'react';
-import LeftArrow from "./LeftArrow";
-import RightArrow from "./RightArrow";
 
 const WorkHistory = (props) => {
     const { WorkHistory } = props
