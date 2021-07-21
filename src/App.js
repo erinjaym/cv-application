@@ -11,7 +11,7 @@ import CvResults from "./components/CvResults";
    super(props);
 
    this.state = {
-     section: <General />,
+     section: <General handleData={this.handleGeneralData} />,
      id: 0,
    };
 
@@ -22,21 +22,33 @@ import CvResults from "./components/CvResults";
    this.backToBuild = this.backToBuild.bind(this);
    }
 
+handleGeneralData = (formData) => {
+  this.setState ({...formData});
+}
+
+handleEducationData = (formData) => {
+  this.setState ({...formData});
+}
+
+handleWorkData = (formData) => {
+  this.setState ({...formData});
+}
+
    goRight () {
     this.setState (prevState => {
           if (prevState.id === 2){
             return{
-              section: <General />,
+              section: <General handleData={this.handleGeneralData}/>,
               id: 0
             }
           }else if (prevState.id === 0){
             return {
-              section: <Education />,
+              section: <Education handleData={this.handleEducationData}/>,
               id: 1
             }
           }else if(prevState.id === 1){
             return {
-              section: <Workhistory />,
+              section: <Workhistory handleData={this.handleWorkData}/>,
               id: 2
             }
           }
@@ -49,17 +61,17 @@ import CvResults from "./components/CvResults";
     this.setState (prevState => {
           if (prevState.id === 0){
             return{
-              section: <Workhistory />,
+              section: <Workhistory handleData={this.handleWorkData}/>,
               id: 2
             }
           }else if (prevState.id === 1){
             return {
-              section: <General />,
+              section: <General handleData={this.handleGeneralData}/>, 
               id: 0
             }
           }else if(prevState.id === 2){
             return {
-              section: <Education />,
+              section: <Education handleData={this.handleEducationData}/>,
               id: 1
             }
           }
@@ -67,10 +79,11 @@ import CvResults from "./components/CvResults";
     })
   }
 
+
 displayCv (){
   this.setState (prevState => {
     return { 
-      section: <CvResults />, 
+      section: <CvResults data={this.state}/>, 
       id: 3
     }
   })
@@ -79,13 +92,11 @@ displayCv (){
 backToBuild (){
 this.setState (prevState => {
   return {
-    section: <General />,
+    section: <General handleData={this.handleGeneralData}/>,
     id: 0
   }
 })
 } 
-
-
 
 workChange () {
   console.log ("changed shit");
@@ -106,7 +117,7 @@ educationChange () {
 
 generalChange () {
 this.setState ({
-  section: <General />,
+  section: <General handleData={this.handleGeneralData}/>,
   id: 0
 });
 }
@@ -115,10 +126,11 @@ this.setState ({
   return <div className="wrapper">
       <h1>CV Maker 1.0</h1>
       <div className="general">
-        <div><LeftArrow goLeft={this.goLeft.bind(this)}/></div>
+        <div ><LeftArrow goLeft={this.goLeft.bind(this)}/></div>
         {this.state.section}
         <div><RightArrow goRight={this.goRight.bind(this)}/></div>
       </div>
+      <button onClick={this.handleSubmit}>SUBMIT BUTTON OF DEATH!!! </button>
       <button id="check-cv" onClick={this.displayCv}>Check CV</button>
       <button id="back-to-build" onClick={this.backToBuild}>Back to Build </button>
   </div>
