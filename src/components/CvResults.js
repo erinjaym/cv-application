@@ -38,13 +38,30 @@ class CvResults extends React.Component {
             </div>
 
             <div id="educa" className="education-information-section">
-                <div id="edu-title" className="title">Education History</div>
+                <div id="edu-title" className="title">
+                    Education History
+                </div>
                 <div id="edu-info" className="education-information">
-                    Shool:<div id="school-name">MSU DENVER</div>
-                    Date of Graduation:<div id="grad-date">10/21/21</div>
-                    Major:<div id="major">Comp Sci </div>
-                    Minor:<div id="minor">Japanese</div>
-                    GPA:<div id="gpa">3.5</div>
+                    Shool:
+                    <div id="school-name">
+                        {this.props.data.school}
+                    </div>
+                    Date of Graduation:
+                    <div id="grad-date">
+                        {this.props.data.gradDate}
+                    </div>
+                    Major:
+                    <div id="major">
+                        {this.props.data.major}
+                    </div>
+                    Minor:
+                    <div id="minor">
+                        {this.props.data.minor}
+                    </div>
+                    GPA:
+                    <div id="gpa">
+                        {this.props.data.gpa}
+                    </div>
                 </div>
             </div>
 

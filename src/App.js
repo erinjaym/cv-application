@@ -5,6 +5,7 @@ import Education from "./components/Education";
 import LeftArrow from "./components/LeftArrow";
 import RightArrow from "./components/RightArrow";
 import CvResults from "./components/CvResults";
+import Submit from "./components/Submit";
 
  class App extends Component {
    constructor(props){
@@ -22,9 +23,19 @@ import CvResults from "./components/CvResults";
    this.backToBuild = this.backToBuild.bind(this);
    }
 
+
+   displaySaveMenu () {
+    this.setState (prevState => {
+      return {
+        section: <Submit />,
+        id: 4
+      }
+      })
+  }
+
 handleGeneralData = (formData) => {
-  this.setState ({...formData});
-}
+    this.setState ({...formData});
+  }
 
 handleEducationData = (formData) => {
   this.setState ({...formData});
@@ -130,9 +141,8 @@ this.setState ({
         {this.state.section}
         <div><RightArrow goRight={this.goRight.bind(this)}/></div>
       </div>
-      <button onClick={this.handleSubmit}>SUBMIT BUTTON OF DEATH!!! </button>
-      <button id="check-cv" onClick={this.displayCv}>Check CV</button>
-      <button id="back-to-build" onClick={this.backToBuild}>Back to Build </button>
+      <button id="check-cv" className="preview-cv" onClick={this.displayCv}>Preview CV</button>
+      <button id="back-to-build" className="edit-button" onClick={this.backToBuild}>Back to editer </button>
   </div>
   }
 }
