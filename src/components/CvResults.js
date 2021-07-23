@@ -18,7 +18,8 @@ class CvResults extends React.Component {
                 id="personal-intro" className="personal-information">
                     <div name="first" id="name" className="full-name">
                         {this.props.data.first} 
-                        {' ' + this.props.data.last}
+                        {' '}
+                        {this.props.data.last}
                     </div>
                     <div id="spacer"> </div>
                         Phone:

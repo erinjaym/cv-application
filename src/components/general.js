@@ -1,4 +1,5 @@
 import React from 'react';
+import Submit from './Submit';
 
 class General extends React.Component{
     constructor(props){
@@ -9,7 +10,8 @@ class General extends React.Component{
                 age: '',
                 phone: '',
                 email: '',
-                intro: ''
+                intro: '',
+                save: false,
         };
 
             this.handleInputChange = this.handleInputChange.bind(this);
@@ -31,9 +33,23 @@ class General extends React.Component{
         event.preventDefault();
     }
 
-    render(){
+    toggleSave() {
+        this.setState({
+            save: true
+        });
+    }
 
+    storeInput() {
+        this.props.handleData(this.state);
+        //this.toggleSave();
+    }
+
+    render(){
+        if (this.state.save === false){
     return (
+
+
+
             
             <div id="general" className="main">
             <h1><center>Personal Information</center></h1>
@@ -116,10 +132,9 @@ class General extends React.Component{
                 </div><br></br>
 
                 <div id="save" className="formContent">
-                    <button className="save-button" type="submit" onClick={this.props.handleData(this.state)}>
+                    <button className="save-button" type="submit" onClick={() => this.storeInput()}>
                         Save
                     </button> 
-                    <button  id="clearGeneral" className="delete-button">Clear</button>
                 </div>
 
                 
@@ -127,6 +142,9 @@ class General extends React.Component{
             </div>
 
     );
+        }else {
+            return ( <Submit />);
+        }
 }
 } // render
 

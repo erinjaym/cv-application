@@ -23,7 +23,7 @@ code {
   width: 50vw;
   }
 
-  .general {
+  .interface{
   align-items: center;
   background-color: rgba(128, 128, 128, 0.555);
   border-radius: 1%;
@@ -34,6 +34,16 @@ code {
   padding-bottom: 15px;
   width: 60vw;
   }
+
+
+  .interface-wrapper{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  
   
 
 .work-history {
@@ -122,13 +132,39 @@ textarea {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
+    width: 30%
 }
 
-.delete-button
+.save-button:hover
+{
+    background-color: #fff;
+    border: solid 2px white;
+    color: #4c63af;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu-button
 {
     background-color: #860707;
     border: none;
     color: white;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 30%;
+}
+
+.menu-button:hover
+{
+    background-color: #fff;
+    border: none;
+    color: #860707;
     display: inline-block;
     font-size: 16px;
     padding: 15px 32px;
