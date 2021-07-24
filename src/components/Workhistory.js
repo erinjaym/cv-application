@@ -26,6 +26,11 @@ class WorkHistory extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
     }
+
+    storeInput() {
+        this.props.handleData(this.state);
+    }
+
     
 render(){
 
@@ -108,8 +113,7 @@ render(){
                 </div><br/><br/>
 
                 <div id="add" className="formContent">
-                    <button className="save-button" type="submit" onClick={this.props.handleData(this.state)}>Add</button> 
-                    <button id="clearWorkHistory" className="delete-button">Clear</button>
+                    <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
                 </div>
             </form>
         </div>

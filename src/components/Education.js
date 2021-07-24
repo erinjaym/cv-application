@@ -104,8 +104,7 @@ class Education extends React.Component {
                     </div><br></br>
 
                 <div id="save" className="formContent">
-                    <button className="save-button" type="submit" onClick={this.props.handleData(this.state)}>Save</button> 
-                    <button id="clearEducation" className="delete-button" type="">Clear</button>
+                    <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
                 </div>
             </form>
             </div>

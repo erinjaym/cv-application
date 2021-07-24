@@ -15,6 +15,8 @@ import MainButtons from "./components/MainButtons";
    this.state = {
      section: <General handleData={this.handleGeneralData} />,
      id: 0,
+     cv: false,
+     menu: false
    };
 
    //this.workChange = this.workChange.bind(this); (may add buttons to specific section later. Will omit if not. 
@@ -32,19 +34,14 @@ handleGeneralData = (formData) => {
     this.displayMenu();
   }
 
-  displayMenu() {
-    this.setState ({
-      section: <Submit />,
-      id: 5
-    });
-  }
-
 handleEducationData = (formData) => {
   this.setState ({...formData});
+  this.displayMenu();
 }
 
 handleWorkData = (formData) => {
   this.setState ({...formData});
+  this.displayMenu();
 }
 
    goRight () {
@@ -94,12 +91,78 @@ handleWorkData = (formData) => {
 
 
 displayCv (){
-  this.setState (prevState => {
-    return { 
-      section: <CvResults data={this.state}/>, 
-      id: 3
-    }
-  })
+  if (this.state.cv)
+  {
+    return this.returnFromCv();
+  }else {
+    this.setState (prevState => {
+      return { 
+        section: <CvResults data={this.state}/>, 
+        cv: true
+      }
+   });
+  }
+}
+
+returnFromCv(){
+  if (this.state.id === 0){
+    return  this.setState ({
+      section: <General handleData={this.handleGeneralData}/>,
+      cv: false,
+    });  
+  }else if (this.state.id === 1){
+    return   this.setState ({
+      section: <Education handleData={this.handleEducationData}/>,
+      cv: false,
+    });  
+  }else if(this.state.id === 2){
+    return   this.setState ({
+      section: <Workhistory handleData={this.handleEducationData}/>,
+      cv: false,
+    }); 
+  }else{
+    return this.setState ({
+      section: <Submit data={this.state}/>,
+      cv: false,
+    })
+  }
+
+}
+
+displayMenu() {
+  if (this.state.menu)
+  {
+    return this.returnFromMenu();
+  }else {
+  this.setState ({
+    section: <Submit />,
+    menu: true
+  });
+}
+}
+
+returnFromMenu () {    
+  if (this.state.id === 0){
+    return   this.setState ({
+      section: <General handleData={this.handleGeneralData}/>,
+      menu: false,
+    });  
+  }else if (this.state.id === 1){
+    return   this.setState ({
+      section: <Education handleData={this.handleEducationData}/>,
+      menu: false,
+    });  
+  }else if(this.state.id === 2){
+    return   this.setState ({
+      section: <Workhistory handleData={this.handleEducationData}/>,
+      menu: false,
+    }); 
+  }else{
+    return this.setState ({
+      section: <CvResults data={this.state}/>,
+      menu: false,
+    })
+  }
 }
 
 
@@ -148,8 +211,6 @@ this.setState ({
         
         <div id="menu-buttons">
           <MainButtons showCv={this.displayCv} showMenu={this.displayMenu}/>
-          <button id="check-cv" className="preview-cv" onClick={this.displayCv}>Preview CV</button><br/>
-          <button id="back-to-build" className="edit-button" onClick={this.backToBuild}>Back to editor </button>
         </div>
       </div>
   </div>
