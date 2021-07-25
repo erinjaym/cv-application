@@ -5,7 +5,7 @@ import Education from "./components/Education";
 import LeftArrow from "./components/LeftArrow";
 import RightArrow from "./components/RightArrow";
 import CvResults from "./components/CvResults";
-import Submit from "./components/Submit";
+import Menu from "./components/Menu";
 import MainButtons from "./components/MainButtons";
 
  class App extends Component {
@@ -13,20 +13,41 @@ import MainButtons from "./components/MainButtons";
    super(props);
 
    this.state = {
-     section: <General handleData={this.handleGeneralData} />,
-     id: 0,
-     cv: false,
-     menu: false
+     section: <General handleData={this.handleGeneralData} 
+              goToEducation={this.educationChange}
+              goToWork={this.workChange} 
+              goToGeneral={this.generalChange}
+              />,
+      id: 0,
+      cv: false,
+      menu: false,
+      first: 'Bob',
+      last: 'Bojangles',
+      email:  '',
+      phone: '',
+      intro: '',
+      school: 'Metro State',
+      gradDate: '',
+      major: '',
+      minor: '',
+      gpa: '',
+      company: '',
+      jobTitle: '',
+      startDate: '',
+      endDate: '',
+      jobSkills: ''
+
    };
 
-   //this.workChange = this.workChange.bind(this); (may add buttons to specific section later. Will omit if not. 
    this.goRight = this.goRight.bind(this);
    this.goLeft = this.goLeft.bind(this);
    this.displayCv = this.displayCv.bind(this);
    this.backToBuild = this.backToBuild.bind(this);
    this.displayMenu = this.displayMenu.bind(this);
+   this.educationChange = this.educationChange.bind(this);
+   this.workChange = this.workChange.bind(this);
+   this.generalChange = this.generalChange.bind(this);
    }
-
 
 
 handleGeneralData = (formData) => {
@@ -53,7 +74,7 @@ handleWorkData = (formData) => {
             }
           }else if (prevState.id === 0){
             return {
-              section: <Education handleData={this.handleEducationData}/>,
+              section: <Education handleData={this.handleEducationData} />,
               id: 1
             }
           }else if(prevState.id === 1){
@@ -107,26 +128,25 @@ displayCv (){
 returnFromCv(){
   if (this.state.id === 0){
     return  this.setState ({
-      section: <General handleData={this.handleGeneralData}/>,
+      section: <General handleData={this.handleGeneralData} data={this.state}/>,
       cv: false,
     });  
   }else if (this.state.id === 1){
     return   this.setState ({
-      section: <Education handleData={this.handleEducationData}/>,
+      section: <Education handleData={this.handleEducationData} data={this.state} />,
       cv: false,
     });  
   }else if(this.state.id === 2){
     return   this.setState ({
-      section: <Workhistory handleData={this.handleEducationData}/>,
+      section: <Workhistory handleData={this.handleEducationData} data={this.state}/>,
       cv: false,
     }); 
   }else{
     return this.setState ({
-      section: <Submit data={this.state}/>,
+      section: <Menu  goToEducation={this.educationChange} goToWork={this.workChange} goToGeneral={this.generalChange} />,
       cv: false,
     })
   }
-
 }
 
 displayMenu() {
@@ -135,13 +155,13 @@ displayMenu() {
     return this.returnFromMenu();
   }else {
   this.setState ({
-    section: <Submit />,
+    section: <Menu goToEducation={this.educationChange} goToWork={this.workChange} goToGeneral={this.generalChange}/ >,
     menu: true
   });
 }
 }
 
-returnFromMenu () {    
+returnFromMenu () {
   if (this.state.id === 0){
     return   this.setState ({
       section: <General handleData={this.handleGeneralData}/>,
@@ -179,7 +199,7 @@ workChange () {
   console.log ("changed shit");
   this.setState (prevState => {
    return {
-      section: <Workhistory />,
+      section: <Workhistory handleData={this.handleGeneralData} data={this.state}/>,
       id: 2
    }
   })
@@ -187,14 +207,14 @@ workChange () {
 
 educationChange () {
   this.setState ({
-  section: <Education />,
+  section: <Education handleData={this.handleGeneralData} data={this.state}/>,
   id: 1
   });
 }
 
 generalChange () {
 this.setState ({
-  section: <General handleData={this.handleGeneralData}/>,
+  section: <General handleData={this.handleGeneralData} data={this.state}/>,
   id: 0
 });
 }
@@ -210,7 +230,7 @@ this.setState ({
         </div>
         
         <div id="menu-buttons">
-          <MainButtons showCv={this.displayCv} showMenu={this.displayMenu}/>
+          <MainButtons showCv={this.displayCv.bind(this)} showMenu={this.displayMenu.bind(this)}/>
         </div>
       </div>
   </div>

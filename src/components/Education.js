@@ -3,10 +3,13 @@ import React from 'react';
 class Education extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+        };
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
 
     handleInputChange (event) {
         const target = event.target;
@@ -18,7 +21,6 @@ class Education extends React.Component {
         }); 
     }
 
-        // make submit the populated the save screen 
         handleSubmit(event) {
             event.preventDefault();
         }
@@ -38,9 +40,9 @@ class Education extends React.Component {
                     name="school"
                     type="text" 
                     id="school" 
-                    placeholder="Metropolitan State University of Denver" 
+                    placeholder="Metro State University"
                     maxlength="50"
-                    //value={this.state.school}
+                    value={this.state.school}
                     onChange={this.handleInputChange}
                     />
                 </div>
@@ -53,7 +55,7 @@ class Education extends React.Component {
                     name="gradDate" 
                     type="date" 
                     id="gradDate"
-                    //value={this.state.gradDate}
+                    value={this.state.gradDate}
                     onChange={this.handleInputChange}
                     />
                 </div>
@@ -68,7 +70,7 @@ class Education extends React.Component {
                     id="major" 
                     placeholder="Computer Science" 
                     maxlength="30"
-                    //value={this.state.major}
+                    value={this.state.major}
                     onChange={this.handleInputChange}
                     />
                 </div>
@@ -83,7 +85,7 @@ class Education extends React.Component {
                     id="minor" 
                     placeholder="Japanese" 
                     maxlength="30"
-                    //value={this.state.minor}
+                    value={this.state.minor}
                     onChange={this.handleInputChange}
                     />
                 </div>
@@ -98,7 +100,7 @@ class Education extends React.Component {
                     id="gpa"
                     placeholder="3.9"
                     maxlength="4"
-                    //value={this.state.gpa}
+                    value={this.state.gpa}
                     onChange={this.handleInputChange}
                     />
                     </div><br></br>

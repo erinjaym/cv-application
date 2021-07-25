@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Submit (props){
+function Menu (props){
 
     return (
         <div id="submit-screen" className="main">
@@ -20,4 +20,4 @@ function Submit (props){
     );
 }
 
-export default Submit; 
+export default Menu; 

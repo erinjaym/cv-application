@@ -1,18 +1,17 @@
 import React from 'react';
-import Submit from './Submit';
 
 class General extends React.Component{
     constructor(props){
     super (props);
-            this.state = {
-                first: '',
-                last: '',
-                age: '',
-                phone: '',
-                email: '',
-                intro: '',
-                save: false,
-        };
+
+    this.state = {
+        first: '',
+        last: '',
+        age: '',
+        phone: '',
+        email: '',
+        intro: '',
+};
 
             this.handleInputChange = this.handleInputChange.bind(this);
             this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,29 +27,28 @@ class General extends React.Component{
         }); 
     }
 
-    // make submit the populated the save screen 
     handleSubmit(event) {
         event.preventDefault();
     }
 
-    toggleSave() {
-        this.setState({
-            save: true
-        });
-    }
-
     storeInput() {
         this.props.handleData(this.state);
-        //this.toggleSave();
+    }
+
+    dataCheck(){
+        console.log('doing stuffs');
+        if (this.props.data.first != 'Billy'){
+            return console.log('there is data to use');
+        } 
+        else{
+            return console.log('there is no data to use');
+        }
     }
 
     render(){
-        if (this.state.save === false){
+
     return (
 
-
-
-            
             <div id="general" className="main">
             <h1><center>Personal Information</center></h1>
             <form id="generalInfo" onSubmit={this.handleSubmit}> 
@@ -59,8 +57,8 @@ class General extends React.Component{
                     <input 
                     name="first" 
                     type="text" 
+                    placeholder="First Name"
                     id="firstName" 
-                    placeholder="Billy" 
                     maxlength="20" 
                     minlength="2" 
                     value={this.state.first} 
@@ -74,7 +72,7 @@ class General extends React.Component{
                     name="last" 
                     type="text" 
                     id="lastName" 
-                    placeholder="Bojangles" 
+                    placeholder="Last Name" 
                     value={this.state.last} 
                     onChange={this.handleInputChange}
                      maxlength="20" minlength="1"
@@ -98,7 +96,7 @@ class General extends React.Component{
                     name="phone" 
                     type="text" 
                     id="phone" 
-                    placeholder="3333333333" 
+                    placeholder="1234567890" 
                     maxlength="11" 
                     minlength="10" 
                     value={this.state.phone} 
@@ -140,13 +138,8 @@ class General extends React.Component{
                 
             </form>
             </div>
-
     );
-        }else {
-            return ( <Submit />);
-        }
 }
-} // render
-
+}
 
 export default General;

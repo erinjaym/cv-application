@@ -22,7 +22,6 @@ class WorkHistory extends React.Component {
         }); 
     }
 
-    // make submit the populated the save screen 
     handleSubmit(event) {
         event.preventDefault();
     }
@@ -111,6 +110,7 @@ render(){
                     onChange={this.handleInputChange} 
                     />
                 </div><br/><br/>
+                
 
                 <div id="add" className="formContent">
                     <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
@@ -119,7 +119,7 @@ render(){
         </div>
     );
 
-    } // render
+    }
 }
 
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from "./Header.jpg";
-import General from "./general";
 
 class CvResults extends React.Component {
     constructor(props){
@@ -97,6 +96,6 @@ class CvResults extends React.Component {
         </div>
     );
 
-    } // render
+    }
 }
 export default CvResults;
