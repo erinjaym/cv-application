@@ -42,7 +42,7 @@ class CvResults extends React.Component {
                     Education History
                 </div>
                 <div id="edu-info" className="education-information">
-                    Shool:
+                    School:
                     <div id="school-name">
                         {this.props.data.school}
                     </div>

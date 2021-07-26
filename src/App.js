@@ -21,21 +21,7 @@ import MainButtons from "./components/MainButtons";
       id: 0,
       cv: false,
       menu: false,
-      first: 'Bob',
-      last: 'Bojangles',
-      email:  '',
-      phone: '',
-      intro: '',
-      school: 'Metro State',
-      gradDate: '',
-      major: '',
-      minor: '',
-      gpa: '',
-      company: '',
-      jobTitle: '',
-      startDate: '',
-      endDate: '',
-      jobSkills: ''
+
 
    };
 
@@ -69,17 +55,17 @@ handleWorkData = (formData) => {
     this.setState (prevState => {
           if (prevState.id === 2){
             return{
-              section: <General handleData={this.handleGeneralData}/>,
+              section: <General handleData={this.handleGeneralData} data={this.state}/>,
               id: 0
             }
           }else if (prevState.id === 0){
             return {
-              section: <Education handleData={this.handleEducationData} />,
+              section: <Education handleData={this.handleEducationData} data={this.state}/>,
               id: 1
             }
           }else if(prevState.id === 1){
             return {
-              section: <Workhistory handleData={this.handleWorkData}/>,
+              section: <Workhistory handleData={this.handleWorkData} data={this.state}/>,
               id: 2
             }
           }
@@ -92,17 +78,17 @@ handleWorkData = (formData) => {
     this.setState (prevState => {
           if (prevState.id === 0){
             return{
-              section: <Workhistory handleData={this.handleWorkData}/>,
+              section: <Workhistory handleData={this.handleWorkData} data={this.state}/>,
               id: 2
             }
           }else if (prevState.id === 1){
             return {
-              section: <General handleData={this.handleGeneralData}/>, 
+              section: <General handleData={this.handleGeneralData} data={this.state}/>, 
               id: 0
             }
           }else if(prevState.id === 2){
             return {
-              section: <Education handleData={this.handleEducationData}/>,
+              section: <Education handleData={this.handleEducationData} data={this.state}/>,
               id: 1
             }
           }
@@ -143,7 +129,7 @@ returnFromCv(){
     }); 
   }else{
     return this.setState ({
-      section: <Menu  goToEducation={this.educationChange} goToWork={this.workChange} goToGeneral={this.generalChange} />,
+      section: <Menu  goToEducation={this.educationChange} goToWork={this.workChange} goToGeneral={this.generalChange}/>,
       cv: false,
     })
   }
@@ -164,17 +150,17 @@ displayMenu() {
 returnFromMenu () {
   if (this.state.id === 0){
     return   this.setState ({
-      section: <General handleData={this.handleGeneralData}/>,
+      section: <General handleData={this.handleGeneralData} data={this.state}/>,
       menu: false,
     });  
   }else if (this.state.id === 1){
     return   this.setState ({
-      section: <Education handleData={this.handleEducationData}/>,
+      section: <Education handleData={this.handleEducationData} data={this.state}/>,
       menu: false,
     });  
   }else if(this.state.id === 2){
     return   this.setState ({
-      section: <Workhistory handleData={this.handleEducationData}/>,
+      section: <Workhistory handleData={this.handleEducationData} data={this.state}/>,
       menu: false,
     }); 
   }else{

@@ -5,12 +5,7 @@ class General extends React.Component{
     super (props);
 
     this.state = {
-        first: '',
-        last: '',
-        age: '',
-        phone: '',
-        email: '',
-        intro: '',
+
 };
 
             this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,18 +30,9 @@ class General extends React.Component{
         this.props.handleData(this.state);
     }
 
-    dataCheck(){
-        console.log('doing stuffs');
-        if (this.props.data.first != 'Billy'){
-            return console.log('there is data to use');
-        } 
-        else{
-            return console.log('there is no data to use');
-        }
-    }
-
     render(){
 
+        if (this.props.data){
     return (
 
             <div id="general" className="main">
@@ -57,11 +43,10 @@ class General extends React.Component{
                     <input 
                     name="first" 
                     type="text" 
-                    placeholder="First Name"
+                    placeholder={this.props.data.first} //this works when Data.first exists
                     id="firstName" 
                     maxlength="20" 
-                    minlength="2" 
-                    value={this.state.first} 
+                    value={this.props.first} 
                     onChange={this.handleInputChange} 
                     />
                 </div>
@@ -72,22 +57,11 @@ class General extends React.Component{
                     name="last" 
                     type="text" 
                     id="lastName" 
-                    placeholder="Last Name" 
+                    placeholder={this.props.data.last}
                     value={this.state.last} 
                     onChange={this.handleInputChange}
-                     maxlength="20" minlength="1"
+                    maxlength="20"
                      />
-                </div>
-
-                <div id="dobSection" className="formContent">
-                    <label for="dob">Date of birth</label>
-                    <input 
-                    name="age" 
-                    type="date" 
-                    id="dob" 
-                    value={this.state.age} 
-                    onChange={this.handleInputChange}
-                    />
                 </div>
 
                 <div id="phone-number" className="formContent">
@@ -96,7 +70,7 @@ class General extends React.Component{
                     name="phone" 
                     type="text" 
                     id="phone" 
-                    placeholder="1234567890" 
+                    placeholder={this.props.data.phone}
                     maxlength="11" 
                     minlength="10" 
                     value={this.state.phone} 
@@ -110,7 +84,7 @@ class General extends React.Component{
                     name="email" 
                     type="email" 
                     id="email" 
-                    placeholder="bojangles@bojangles.com" 
+                    placeholder={this.props.data.email} 
                     value={this.state.email} 
                     onChange={this.handleInputChange}
                     />
@@ -120,7 +94,7 @@ class General extends React.Component{
                     <label for="about">Self Intro</label>
                     <textarea 
                     name="intro" 
-                    placeholder="state your personal objective" 
+                    placeholder={this.props.data.intro}
                     id="about" 
                     rows="6" 
                     columns="20"
@@ -130,7 +104,7 @@ class General extends React.Component{
                 </div><br></br>
 
                 <div id="save" className="formContent">
-                    <button className="save-button" type="submit" onClick={() => this.storeInput()}>
+                    <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>
                         Save
                     </button> 
                 </div>
@@ -139,7 +113,91 @@ class General extends React.Component{
             </form>
             </div>
     );
-}
+        }else {
+            return (
+
+                <div id="general" className="main">
+                <h1><center>Personal Information</center></h1>
+                <form id="generalInfo" onSubmit={this.handleSubmit}> 
+                    <div id="nameSectionFirst" className="formContent">
+                        <label for="firstName">First name</label>
+                        <input 
+                        name="first" 
+                        type="text" 
+                        placeholder="INITIAL LOAD" //this works when Data.first exists
+                        id="firstName" 
+                        maxlength="20" 
+                        value={this.props.first} 
+                        onChange={this.handleInputChange} 
+                        />
+                    </div>
+    
+                    <div id="nameSectionLast" className="formContent">
+                        <label for="lastName">Last name</label>
+                        <input 
+                        name="last" 
+                        type="text" 
+                        id="lastName" 
+                        placeholder="last name"
+                        value={this.state.last} 
+                        onChange={this.handleInputChange}
+                         maxlength="20"
+                         />
+                    </div>
+    
+                    <div id="phone-number" className="formContent">
+                        <label for="phone">Phone Number</label>
+                        <input 
+                        name="phone" 
+                        type="text" 
+                        id="phone" 
+                        placeholder="1234567890" 
+                        maxlength="11" 
+                        minlength="10" 
+                        value={this.state.phone} 
+                        onChange={this.handleInputChange}
+                        />
+                    </div>
+                
+                    <div id="emailSection" className="formContent">
+                        <label for="email">Email</label>
+                        <input 
+                        name="email" 
+                        type="email" 
+                        id="email" 
+                        placeholder="bojangles@bojangles.com" 
+                        value={this.state.email} 
+                        onChange={this.handleInputChange}
+                        />
+                    </div>
+    
+                    <div id="aboutSection" className="formContent">
+                        <label for="about">Self Intro</label>
+                        <textarea 
+                        name="intro" 
+                        placeholder="state your personal objective" 
+                        id="about" 
+                        rows="6" 
+                        columns="20"
+                        value={this.state.intro} 
+                        onChange={this.handleInputChange}
+                        />
+                    </div><br></br>
+    
+                    <div id="save" className="formContent">
+                        <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>
+                            Save
+                        </button> 
+                    </div>
+    
+                    
+                </form>
+                </div>
+        );
+
+
+        }
+    } // render
 }
 
 export default General;
