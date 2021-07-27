@@ -1,4 +1,4 @@
-Simple Cv creation application created using react. Created as part of the Odin projects full stack learning experience page @ https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/cv-application.
+First attempt at a React app. Simple Cv creation application created using react. Created as part of the Odin projects full stack learning experience page @ https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/cv-application.
 
 
 
