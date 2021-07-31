@@ -218,7 +218,6 @@ returnFromMenu () {
   }
 }
 
-
 workChange () {
   console.log ("changed shit");
   this.setState (prevState => {

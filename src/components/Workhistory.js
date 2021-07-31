@@ -1,41 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class WorkHistory extends React.Component {
-    constructor(props){
-        super(props);
-        
-        this.state = {
-        
-        };
+const WorkHistory = (props) => {
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    const [company, setCompany] = useState (props.company);
+    const [startDate, setStartDate] = useState (props.startDate);
+    const [endDate, setEndDate] = useState (props.endDate);
+    const [jobTitle, setJobTitle] = useState (props.jobTitle);
+    const [jobSkills, setJobSkills] = useState (props.jobSkills);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
     }
 
-    handleInputChange (event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        }); 
+    const handleCompanyChange = (e) => {
+        setCompany (e.target.value)
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    const handleStartDateChange = (e) => {
+        setStartDate (e.target.value)
     }
 
-    
-render(){
+    const handleEndDateChange = (e) => {
+        setEndDate (e.target.value)
+    }
 
-    if (this.props.data.company){
+    const handleJobTitleChange = (e) => {
+        setJobTitle (e.target.value)
+    }
+
+    const handleJobSkillsChange = (e) => {
+        setJobSkills (e.target.value)
+    }
+
         return (
         <div 
         id="workHistoryMain" 
         className="main">
             <h1><center>Work History</center></h1>
-                <form id="workHistoryForm" onSubmit={this.handleSubmit}> 
+                <form id="workHistoryForm" onSubmit={handleSubmit}> 
                     <div id="employer-name" className="formContent">
                         <label for="employer-name">
                             Employer Name
@@ -44,10 +46,9 @@ render(){
                         name="company"
                         type="text" 
                         id="employer-name" 
-                        placeholder={this.props.data.company} 
                         maxlength="20"
-                        value={this.state.employer} 
-                        onChange={this.handleInputChange}
+                        value={company} 
+                        onChange={handleCompanyChange}
                         />
                     </div>
 
@@ -61,8 +62,8 @@ render(){
                         type="date" 
                         className="employment-dates" 
                         id="startDate" 
-                        value={this.state.startDate}
-                        onChange={this.handleInputChange}
+                        value={startDate}
+                        onChange={handleStartDateChange}
                         />
                         <label for="endDate">
                             To
@@ -72,8 +73,8 @@ render(){
                         type="date" 
                         className="employment-dates" 
                         id="endDate"
-                        value={this.state.endDate}
-                        onChange={this.handleInputChange} 
+                        value={endDate}
+                        onChange={handleEndDateChange} 
                         />
                     </div><br/>
 
@@ -85,10 +86,9 @@ render(){
                     name="jobTitle"
                     type="text" 
                     id="jobTitle" 
-                    placeholder={this.props.data.jobTitle}
                     maxlength="30"
-                    value={this.state.jobTitle}
-                    onChange={this.handleInputChange} 
+                    value={jobTitle}
+                    onChange={handleJobTitleChange} 
                     />
                 </div>
             
@@ -99,110 +99,17 @@ render(){
                     <textarea 
                     name="jobSkills"
                     id="jobDescription" 
-                    placeholder={this.props.data.jobSkills}
                     rows="6" columns="20"
-                    value={this.state.jobSkills}
-                    onChange={this.handleInputChange} 
+                    value={jobSkills}
+                    onChange={handleJobSkillsChange} 
                     />
                 </div><br/><br/>
-                
 
                 <div id="add" className="formContent">
-                    <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
+                    <button className="save-button" type="submit" onClick={() => props.handleData({company, startDate, endDate, jobSkills, jobTitle})}>Save</button> 
                 </div>
             </form>
         </div>
         );
-    }else {
-        return (
-            <div 
-            id="workHistoryMain" 
-            className="main">
-                <h1><center>Work History</center></h1>
-                    <form 
-                    id="workHistoryForm"
-                    onSubmit={this.handleSubmit}> 
-                        <div id="employer-name" className="formContent">
-                            <label for="employer-name">
-                                Employer Name
-                            </label>
-                            <input 
-                            name="company"
-                            type="text" 
-                            id="employer-name" 
-                            placeholder="Employer name" 
-                            maxlength="20"
-                            value={this.state.employer} 
-                            onChange={this.handleInputChange}
-                            />
-                        </div>
-    
-                        <div id="datesSection" className="formContent">
-                        Dates of Employment: <br/>
-                            <label for="startDate" >
-                            From
-                            </label>
-                            <input 
-                            name="startDate"
-                            type="date" 
-                            className="employment-dates" 
-                            id="startDate" 
-                            value={this.state.startDate}
-                            onChange={this.handleInputChange}
-                            />
-                            <label for="endDate">
-                                To
-                            </label>
-                            <input 
-                            name="endDate"
-                            type="date" 
-                            className="employment-dates" 
-                            id="endDate"
-                            value={this.state.endDate}
-                            onChange={this.handleInputChange} 
-                            />
-                        </div><br/>
-    
-                    <div id="titleSection" className="formContent">
-                        <label for="jobTitle">
-                            Title
-                        </label>
-                        <input 
-                        name="jobTitle"
-                        type="text" 
-                        id="jobTitle" 
-                        placeholder="Position Title" 
-                        maxlength="30"
-                        value={this.state.jobTitle}
-                        onChange={this.handleInputChange} 
-                        />
-                    </div>
-                
-                    <div id="jobDescriptionSection" className="formContent">
-                        <label for="jobDescription">
-                            Job Responsibilities
-                        </label>
-                        <textarea 
-                        name="jobSkills"
-                        id="jobDescription" 
-                        placeholder="Job responsibilities / skills" 
-                        rows="6" columns="20"
-                        value={this.state.jobSkills}
-                        onChange={this.handleInputChange} 
-                        />
-                    </div><br/><br/>
-                    
-    
-                    <div id="add" className="formContent">
-                        <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
-                    </div>
-                </form>
-            </div>
-            );
-    }
-
-    }
 }
-
-
 export default WorkHistory;

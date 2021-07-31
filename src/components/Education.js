@@ -1,37 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Education extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-        };
+const Education = (props) => { 
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    const [school, setSchool] = useState (props.school);
+    const [gradDate, setGradDate] = useState (props.gradDate);
+    const [major, setMajor] = useState (props.major)
+    const [minor, setMinor] = useState (props.minor); 
+    const [gpa, setGpa] = useState (props.gpa); 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
     }
 
-
-    handleInputChange (event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        }); 
+    const handleSchoolChange = (e) => {
+        setSchool (e.target.value)
     }
 
-        handleSubmit(event) {
-            event.preventDefault();
-        }
-        
+    function handleGradDateChange (e) {
+        setGradDate (e.target.value)
+    }
 
-    render(){
-        if (this.props.data.school){
+    function handleMajorChange (e){
+        setMajor (e.target.value)
+    }
+
+    function handleMinorChange (e) {
+        setMinor (e.target.value)
+    }
+
+    function handleGpaChange (e) {
+        setGpa (e.target.value)
+    }
         return (
             <div id="education-main" className="main">
             <h1><center>Education</center></h1>
-            <form id="educationlInfoForm" onSubmit={this.handleSubmit}> 
+            <form id="educationlInfoForm" onSubmit={handleSubmit}> 
                 <div id="school-name" className="formContent">
                     <label for="school">
                         School Name
@@ -40,10 +43,9 @@ class Education extends React.Component {
                     name="school"
                     type="text" 
                     id="school" 
-                    placeholder={this.props.data.school}
                     maxlength="50"
-                    value={this.state.school}
-                    onChange={this.handleInputChange}
+                    value={school}
+                    onChange={handleSchoolChange}
                     />
                 </div>
 
@@ -55,8 +57,8 @@ class Education extends React.Component {
                     name="gradDate" 
                     type="date" 
                     id="gradDate"
-                    value={this.state.gradDate}
-                    onChange={this.handleInputChange}
+                    value={gradDate}
+                    onChange={handleGradDateChange}
                     />
                 </div>
 
@@ -68,10 +70,9 @@ class Education extends React.Component {
                     name="major"
                     type="text" 
                     id="major" 
-                    placeholder={this.props.data.major}
                     maxlength="30"
-                    value={this.state.major}
-                    onChange={this.handleInputChange}
+                    value={major}
+                    onChange={handleMajorChange}
                     />
                 </div>
             
@@ -83,10 +84,9 @@ class Education extends React.Component {
                     name="minor"
                     type="text" 
                     id="minor" 
-                    placeholder={this.props.data.minor}
                     maxlength="30"
-                    value={this.state.minor}
-                    onChange={this.handleInputChange}
+                    value={minor}
+                    onChange={handleMinorChange}
                     />
                 </div>
                 
@@ -98,106 +98,17 @@ class Education extends React.Component {
                     name="gpa"
                     type="text"
                     id="gpa"
-                    placeholder={this.props.data.gpa}
                     maxlength="4"
-                    value={this.state.gpa}
-                    onChange={this.handleInputChange}
+                    value={gpa}
+                    onChange={handleGpaChange}
                     />
                     </div><br></br>
 
                 <div id="save" className="formContent">
-                    <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
+                    <button className="save-button" type="submit" onClick={() => props.handleData({school, gradDate, gpa, major, minor, })}>Save</button> 
                 </div>
             </form>
             </div>
         );
-        }else {
-            return (
-                <div id="education-main" className="main">
-                <h1><center>Education</center></h1>
-                <form id="educationlInfoForm" onSubmit={this.handleSubmit}> 
-                    <div id="school-name" className="formContent">
-                        <label for="school">
-                            School Name
-                        </label>
-                        <input 
-                        name="school"
-                        type="text" 
-                        id="school" 
-                        placeholder="Metro State University"
-                        maxlength="50"
-                        value={this.state.school}
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-    
-                    <div id="datesSection" className="formContent">
-                        <label for="gradDate">
-                            Date of Graduation
-                        </label>
-                        <input
-                        name="gradDate" 
-                        type="date" 
-                        id="gradDate"
-                        value={this.state.gradDate}
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-    
-                    <div id="majorSection" className="formContent">
-                        <label for="major">
-                            Major
-                        </label>
-                        <input 
-                        name="major"
-                        type="text" 
-                        id="major" 
-                        placeholder="Computer Science" 
-                        maxlength="30"
-                        value={this.state.major}
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-                
-                    <div id="minorSection" className="formContent">
-                        <label for="minor">
-                            Minor
-                        </label>
-                        <input 
-                        name="minor"
-                        type="text" 
-                        id="minor" 
-                        placeholder="Japanese" 
-                        maxlength="30"
-                        value={this.state.minor}
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-                    
-                    <div id="gpa-section" className="formContent">
-                        <label for="gpa">
-                            GPA:
-                        </label>
-                        <input
-                        name="gpa"
-                        type="text"
-                        id="gpa"
-                        placeholder="3.9"
-                        maxlength="4"
-                        value={this.state.gpa}
-                        onChange={this.handleInputChange}
-                        />
-                        </div><br></br>
-    
-                    <div id="save" className="formContent">
-                        <button className="save-button" type="submit" onClick={() => this.props.handleData(this.state)}>Save</button> 
-                    </div>
-                </form>
-                </div>
-            );
-
-        }
 }
-}
-
 export default Education;
