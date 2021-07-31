@@ -1,11 +1,7 @@
 import React from 'react';
-import Header from "./Header.jpg";
+import Header from "./Header.png";
 
-class CvResults extends React.Component {
-    constructor(props){
-    super(props);
-    }
-    render(){
+const CvResults = (props) => {
     return (
         <div id="cv-result" className="cv-display">
 
@@ -14,22 +10,22 @@ class CvResults extends React.Component {
                 <div 
                 id="personal-intro" className="personal-information">
                     <div name="first" id="name" className="full-name">
-                        {this.props.data.first} 
+                        {props.data.first} 
                         {' '}
-                        {this.props.data.last}
+                        {props.data.last}
                     </div>
                     <div id="spacer"> </div>
                         Phone:
                     <div id="phone-number">
-                        {this.props.data.phone}
+                        {props.data.phone}
                     </div>
                         E-mail:
                     <div id="email">
-                        {this.props.data.email}
+                        {props.data.email}
                     </div>
                         Objective:
                     <div id="self-intro">
-                        {this.props.data.intro}
+                        {props.data.intro}
                     </div>
                 </div>
 
@@ -42,23 +38,23 @@ class CvResults extends React.Component {
                 <div id="edu-info" className="education-information">
                     School:
                     <div id="school-name">
-                        {this.props.data.school}
+                        {props.data.school}
                     </div>
                     Date of Graduation:
                     <div id="grad-date">
-                        {this.props.data.gradDate}
+                        {props.data.gradDate}
                     </div>
                     Major:
                     <div id="major">
-                        {this.props.data.major}
+                        {props.data.major}
                     </div>
                     Minor:
                     <div id="minor">
-                        {this.props.data.minor}
+                        {props.data.minor}
                     </div>
                     GPA:
                     <div id="gpa">
-                        {this.props.data.gpa}
+                        {props.data.gpa}
                     </div>
                 </div>
             </div>
@@ -74,26 +70,24 @@ class CvResults extends React.Component {
                     className="work-information">
                     Employer: 
                     <div id="employer-name">
-                        {this.props.data.company}
+                        {props.data.company}
                     </div>
                     Position Title: 
                     <div 
                     id="position-title">
-                        {this.props.data.jobTitle}
+                        {props.data.jobTitle}
                     </div>
                     Dates Of Employment: 
                     <div id="date-of-employ">
-                        {this.props.data.startDate + '-' + this.props.data.endDate}
+                        {props.data.startDate + '-' + props.data.endDate}
                     </div>
                     Job Responsibilities: 
                     <div id="job-resp">
-                        {this.props.data.jobSkills}
+                        {props.data.jobSkills}
                     </div>
                     </div>
             </div>
         </div>
     );
-
-    }
 }
 export default CvResults;
