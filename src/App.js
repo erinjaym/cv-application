@@ -85,7 +85,15 @@ handleWorkData = (formData) => {
             }
           }else if (prevState.id === 0){
             return {
-              section: <Education handleData={this.handleEducationData} data={this.state}/>,
+              section: <Education
+              handleData={this.handleEducationData} 
+              data={this.state} 
+              major={this.state.major} 
+              minor={this.state.minor} 
+              gpa={this.state.gpa} 
+              gradDate={this.state.gradDate}
+              school={this.state.school}
+              />,
               id: 1
             }
           }else if(prevState.id === 1){
@@ -119,7 +127,15 @@ handleWorkData = (formData) => {
             }
           }else if(prevState.id === 2){
             return {
-              section: <Education handleData={this.handleEducationData} data={this.state}/>,
+              section: <Education
+              handleData={this.handleEducationData} 
+              data={this.state} 
+              major={this.state.major} 
+              minor={this.state.minor} 
+              gpa={this.state.gpa} 
+              gradDate={this.state.gradDate}
+              school={this.state.school}
+              />,
               id: 1
             }
           }
@@ -157,7 +173,15 @@ returnFromCv(){
     });  
   }else if (this.state.id === 1){
     return   this.setState ({
-      section: <Education handleData={this.handleEducationData} data={this.state} />,
+      section: <Education
+      handleData={this.handleEducationData} 
+      data={this.state} 
+      major={this.state.major} 
+      minor={this.state.minor} 
+      gpa={this.state.gpa} 
+      gradDate={this.state.gradDate}
+      school={this.state.school}
+      />,
       cv: false,
     });  
   }else if(this.state.id === 2){
@@ -200,7 +224,15 @@ returnFromMenu () {
     });  
   }else if (this.state.id === 1){
     return   this.setState ({
-      section: <Education handleData={this.handleEducationData} data={this.state}/>,
+      section: <Education
+      handleData={this.handleEducationData} 
+      data={this.state} 
+      major={this.state.major} 
+      minor={this.state.minor} 
+      gpa={this.state.gpa} 
+      gradDate={this.state.gradDate}
+      school={this.state.school}
+      />,
       menu: false,
     });  
   }else if(this.state.id === 2){
@@ -228,7 +260,15 @@ workChange () {
 
 educationChange () {
   this.setState ({
-  section: <Education handleData={this.handleGeneralData} data={this.state}/>,
+    section: <Education
+    handleData={this.handleEducationData} 
+    data={this.state} 
+    major={this.state.major} 
+    minor={this.state.minor} 
+    gpa={this.state.gpa} 
+    gradDate={this.state.gradDate}
+    school={this.state.school}
+    />,
   id: 1
   });
 }
