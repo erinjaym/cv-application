@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const General = (props) => {
 
-    const [first, setFirstName] = useState('First Name');
-    const [last, setLastName] = useState('Last Name');
-    const [phone, setPhone] = useState ('Phone');
-    const [email, setEmail] = useState ('Email');
-    const [intro, setIntro] = useState ('About Yourself');
+    const [first, setFirstName] = useState (props.first);
+    const [last, setLastName] = useState(props.last);
+    const [phone, setPhone] = useState (props.phone);
+    const [email, setEmail] = useState (props.email);
+    const [intro, setIntro] = useState (props.intro);
     
     const handleSubmit = (e) => {
         e.preventDefault();

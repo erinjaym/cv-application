@@ -13,11 +13,23 @@ import MainButtons from "./components/MainButtons";
    super(props);
 
    this.state = {
-     section: <General handleData={this.handleGeneralData} 
+     section: <General 
+              first="Your"
+              last="Name"
+              phone="101-101-1001"
+              email="email@email.com"
+              intro="About Me"
+              handleData={this.handleGeneralData} 
               goToEducation={this.educationChange}
               goToWork={this.workChange} 
               goToGeneral={this.generalChange}
               />,
+        
+      first: "Your",
+      last: "Name",
+      phone: "101-101-1001",
+      email: "email@email.com",
+      intro: "About Me",
       id: 0,
       cv: false,
       menu: false,
@@ -26,7 +38,6 @@ import MainButtons from "./components/MainButtons";
    this.goRight = this.goRight.bind(this);
    this.goLeft = this.goLeft.bind(this);
    this.displayCv = this.displayCv.bind(this);
-   this.backToBuild = this.backToBuild.bind(this);
    this.displayMenu = this.displayMenu.bind(this);
    this.educationChange = this.educationChange.bind(this);
    this.workChange = this.workChange.bind(this);
@@ -53,7 +64,14 @@ handleWorkData = (formData) => {
     this.setState (prevState => {
           if (prevState.id === 2){
             return{
-              section: <General handleData={this.handleGeneralData} data={this.state}/>,
+              section: <General 
+                        handleData={this.handleGeneralData} 
+                        data={this.state} 
+                        first={this.state.first} 
+                        last={this.state.last} 
+                        phone={this.state.phone} 
+                        email={this.state.email} 
+                        intro={this.state.intro}/>,
               id: 0
             }
           }else if (prevState.id === 0){
@@ -81,7 +99,14 @@ handleWorkData = (formData) => {
             }
           }else if (prevState.id === 1){
             return {
-              section: <General handleData={this.handleGeneralData} data={this.state}/>, 
+              section: <General 
+              handleData={this.handleGeneralData} 
+              data={this.state} 
+              first={this.state.first} 
+              last={this.state.last} 
+              phone={this.state.phone} 
+              email={this.state.email} 
+              intro={this.state.intro}/>,
               id: 0
             }
           }else if(prevState.id === 2){
@@ -112,7 +137,14 @@ displayCv (){
 returnFromCv(){
   if (this.state.id === 0){
     return  this.setState ({
-      section: <General handleData={this.handleGeneralData} data={this.state}/>,
+      section: <General 
+                handleData={this.handleGeneralData} 
+                data={this.state} 
+                first={this.state.first} 
+                last={this.state.last} 
+                phone={this.state.phone} 
+                email={this.state.email} 
+                intro={this.state.intro}/>,
       cv: false,
     });  
   }else if (this.state.id === 1){
@@ -148,7 +180,14 @@ displayMenu() {
 returnFromMenu () {
   if (this.state.id === 0){
     return   this.setState ({
-      section: <General handleData={this.handleGeneralData} data={this.state}/>,
+      section: <General 
+              handleData={this.handleGeneralData} 
+              data={this.state} 
+              first={this.state.first} 
+              last={this.state.last} 
+              phone={this.state.phone} 
+              email={this.state.email} 
+              intro={this.state.intro}/>,
       menu: false,
     });  
   }else if (this.state.id === 1){
@@ -170,15 +209,6 @@ returnFromMenu () {
 }
 
 
-backToBuild (){
-this.setState (prevState => {
-  return {
-    section: <General handleData={this.handleGeneralData}/>,
-    id: 0
-  }
-})
-} 
-
 workChange () {
   console.log ("changed shit");
   this.setState (prevState => {
@@ -198,7 +228,14 @@ educationChange () {
 
 generalChange () {
 this.setState ({
-  section: <General handleData={this.handleGeneralData} data={this.state}/>,
+  section: <General 
+          handleData={this.handleGeneralData} 
+          data={this.state} 
+          first={this.state.first} 
+          last={this.state.last} 
+          phone={this.state.phone} 
+          email={this.state.email} 
+          intro={this.state.intro}/>,
   id: 0
 });
 }
