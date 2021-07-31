@@ -32,20 +32,6 @@ const General = (props) => {
         setEmail (e.target.value) 
     }
 
-    /*handleInputChange (event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        }); 
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-    }*/
-
     return (
             <div id="general" className="main">
             <h1><center>Personal Information</center></h1>

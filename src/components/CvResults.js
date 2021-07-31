@@ -4,10 +4,8 @@ import Header from "./Header.jpg";
 class CvResults extends React.Component {
     constructor(props){
     super(props);
-
     }
     render(){
-
     return (
         <div id="cv-result" className="cv-display">
 
