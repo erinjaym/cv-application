@@ -24,7 +24,6 @@ import MainButtons from "./components/MainButtons";
               goToWork={this.workChange} 
               goToGeneral={this.generalChange}
               />,
-        
       first: "Your",
       last: "Name",
       phone: "101-101-1001",
@@ -98,7 +97,6 @@ handleWorkData = (formData) => {
           else {}
     })
   }
-
 
   goLeft () {
     this.setState (prevState => {

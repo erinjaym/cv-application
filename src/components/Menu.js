@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Menu (props){
-
     return (
         <div id="submit-screen" className="main">
             <div id="options-menu" className="options-menu">
@@ -19,5 +18,4 @@ function Menu (props){
         </div>
     );
 }
-
 export default Menu; 

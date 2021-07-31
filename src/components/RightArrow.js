@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function RightArrow (props) {
     return (
         <div id="right-arrow" className="arrow-right" onClick={props.goRight}>
@@ -8,5 +7,4 @@ function RightArrow (props) {
         </div>
     );
 }
-
 export default RightArrow;
