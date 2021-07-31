@@ -21,8 +21,6 @@ import MainButtons from "./components/MainButtons";
       id: 0,
       cv: false,
       menu: false,
-
-
    };
 
    this.goRight = this.goRight.bind(this);
