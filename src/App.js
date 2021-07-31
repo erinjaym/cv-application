@@ -98,7 +98,15 @@ handleWorkData = (formData) => {
             }
           }else if(prevState.id === 1){
             return {
-              section: <Workhistory handleData={this.handleWorkData} data={this.state}/>,
+              section: <Workhistory 
+              handleData={this.handleWorkData} 
+              data={this.state} 
+              company={this.state.company} 
+              endDate={this.state.endDate} 
+              startDate={this.state.startDate}
+              jobTitle={this.state.jobTitle} 
+              jobSkills={this.state.jobSkills}
+              />,
               id: 2
             }
           }
@@ -110,7 +118,15 @@ handleWorkData = (formData) => {
     this.setState (prevState => {
           if (prevState.id === 0){
             return{
-              section: <Workhistory handleData={this.handleWorkData} data={this.state}/>,
+              section: <Workhistory 
+              handleData={this.handleWorkData} 
+              data={this.state} 
+              company={this.state.company} 
+              endDate={this.state.endDate} 
+              startDate={this.state.startDate}
+              jobTitle={this.state.jobTitle} 
+              jobSkills={this.state.jobSkills}
+              />,
               id: 2
             }
           }else if (prevState.id === 1){
@@ -186,7 +202,15 @@ returnFromCv(){
     });  
   }else if(this.state.id === 2){
     return   this.setState ({
-      section: <Workhistory handleData={this.handleEducationData} data={this.state}/>,
+      section: <Workhistory 
+      handleData={this.handleWorkData} 
+      data={this.state} 
+      company={this.state.company} 
+      endDate={this.state.endDate} 
+      startDate={this.state.startDate}
+      jobTitle={this.state.jobTitle} 
+      jobSkills={this.state.jobSkills}
+      />,
       cv: false,
     }); 
   }else{
@@ -237,7 +261,15 @@ returnFromMenu () {
     });  
   }else if(this.state.id === 2){
     return   this.setState ({
-      section: <Workhistory handleData={this.handleEducationData} data={this.state}/>,
+      section: <Workhistory 
+      handleData={this.handleWorkData} 
+      data={this.state} 
+      company={this.state.company} 
+      endDate={this.state.endDate} 
+      startDate={this.state.startDate}
+      jobTitle={this.state.jobTitle} 
+      jobSkills={this.state.jobSkills}
+      />,
       menu: false,
     }); 
   }else{
@@ -252,7 +284,15 @@ workChange () {
   console.log ("changed shit");
   this.setState (prevState => {
    return {
-      section: <Workhistory handleData={this.handleGeneralData} data={this.state}/>,
+    section: <Workhistory 
+    handleData={this.handleWorkData} 
+    data={this.state} 
+    company={this.state.company} 
+    endDate={this.state.endDate} 
+    startDate={this.state.startDate}
+    jobTitle={this.state.jobTitle} 
+    jobSkills={this.state.jobSkills}
+    />,
       id: 2
    }
   })
