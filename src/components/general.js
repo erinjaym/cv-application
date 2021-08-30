@@ -37,44 +37,44 @@ const General = (props) => {
             <h1><center>Personal Information</center></h1>
             <form id="generalInfo" onSubmit={handleSubmit}> 
                 <div id="nameSectionFirst" className="formContent">
-                    <label for="firstName">First name</label>
+                    <label htmlFor="firstName">First name</label>
                     <input 
                     name="first" 
                     type="text" 
                     id="firstName" 
-                    maxlength="20" 
+                    maxLength="20" 
                     value={first} 
                     onChange={handleFirstNameChange} 
                     />
                 </div>
 
                 <div id="nameSectionLast" className="formContent">
-                    <label for="lastName">Last name</label>
+                    <label htmlFor="lastName">Last name</label>
                     <input 
                     name="last" 
                     type="text" 
                     id="lastName" 
                     value={last} 
                     onChange={handleLastNameChange}
-                    maxlength="20"
+                    maxLength="20"
                      />
                 </div>
 
                 <div id="phone-number" className="formContent">
-                    <label for="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone Number</label>
                     <input 
                     name="phone" 
                     type="text" 
                     id="phone" 
-                    maxlength="11" 
-                    minlength="10" 
+                    maxLength="11" 
+                    minLength="10" 
                     value={phone} 
                     onChange={handlePhoneChange}
                     />
                 </div>
             
                 <div id="emailSection" className="formContent">
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input 
                     name="email" 
                     type="email" 
@@ -85,7 +85,7 @@ const General = (props) => {
                 </div>
 
                 <div id="aboutSection" className="formContent">
-                    <label for="about">Self Intro</label>
+                    <label htmlFor="about">Self Intro</label>
                     <textarea 
                     name="intro" 
                     id="about" 

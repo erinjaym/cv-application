@@ -36,21 +36,21 @@ const Education = (props) => {
             <h1><center>Education</center></h1>
             <form id="educationlInfoForm" onSubmit={handleSubmit}> 
                 <div id="school-name" className="formContent">
-                    <label for="school">
+                    <label htmlFor="school">
                         School Name
                     </label>
                     <input 
                     name="school"
                     type="text" 
                     id="school" 
-                    maxlength="50"
+                    maxLength="50"
                     value={school}
                     onChange={handleSchoolChange}
                     />
                 </div>
 
                 <div id="datesSection" className="formContent">
-                    <label for="gradDate">
+                    <label htmlFor="gradDate">
                         Date of Graduation
                     </label>
                     <input
@@ -63,42 +63,42 @@ const Education = (props) => {
                 </div>
 
                 <div id="majorSection" className="formContent">
-                    <label for="major">
+                    <label htmlFor="major">
                         Major
                     </label>
                     <input 
                     name="major"
                     type="text" 
                     id="major" 
-                    maxlength="30"
+                    maxLength="30"
                     value={major}
                     onChange={handleMajorChange}
                     />
                 </div>
             
                 <div id="minorSection" className="formContent">
-                    <label for="minor">
+                    <label htmlFor="minor">
                         Minor
                     </label>
                     <input 
                     name="minor"
                     type="text" 
                     id="minor" 
-                    maxlength="30"
+                    maxLength="30"
                     value={minor}
                     onChange={handleMinorChange}
                     />
                 </div>
                 
                 <div id="gpa-section" className="formContent">
-                    <label for="gpa">
+                    <label htmlFor="gpa">
                         GPA:
                     </label>
                     <input
                     name="gpa"
                     type="text"
                     id="gpa"
-                    maxlength="4"
+                    maxLength="4"
                     value={gpa}
                     onChange={handleGpaChange}
                     />

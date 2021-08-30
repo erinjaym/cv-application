@@ -6,7 +6,7 @@ const CvResults = (props) => {
         <div id="cv-result" className="cv-display">
 
             <div id="pi" className="personal-information-section">
-                <div id="pi-sidebar"><img src={Header} height="200px" width="200px"/></div>
+                <div id="pi-sidebar"><img alt="headshot slot" src={Header} height="200px" width="200px"/></div>
                 <div 
                 id="personal-intro" className="personal-information">
                     <div name="first" id="name" className="full-name">

@@ -39,14 +39,14 @@ const WorkHistory = (props) => {
             <h1><center>Work History</center></h1>
                 <form id="workHistoryForm" onSubmit={handleSubmit}> 
                     <div id="employer-name" className="formContent">
-                        <label for="employer-name">
+                        <label htmlFor="employer-name">
                             Employer Name
                         </label>
                         <input 
                         name="company"
                         type="text" 
                         id="employer-name" 
-                        maxlength="20"
+                        maxLength="20"
                         value={company} 
                         onChange={handleCompanyChange}
                         />
@@ -54,7 +54,7 @@ const WorkHistory = (props) => {
 
                     <div id="datesSection" className="formContent">
                     Dates of Employment: <br/>
-                        <label for="startDate" >
+                        <label htmlFor="startDate" >
                         From
                         </label>
                         <input 
@@ -65,7 +65,7 @@ const WorkHistory = (props) => {
                         value={startDate}
                         onChange={handleStartDateChange}
                         />
-                        <label for="endDate">
+                        <label htmlFor="endDate">
                             To
                         </label>
                         <input 
@@ -79,21 +79,21 @@ const WorkHistory = (props) => {
                     </div><br/>
 
                 <div id="titleSection" className="formContent">
-                    <label for="jobTitle">
+                    <label htmlFor="jobTitle">
                         Title
                     </label>
                     <input 
                     name="jobTitle"
                     type="text" 
                     id="jobTitle" 
-                    maxlength="30"
+                    maxLength="30"
                     value={jobTitle}
                     onChange={handleJobTitleChange} 
                     />
                 </div>
             
                 <div id="jobDescriptionSection" className="formContent">
-                    <label for="jobDescription">
+                    <label htmlFor="jobDescription">
                         Job Responsibilities
                     </label>
                     <textarea 
